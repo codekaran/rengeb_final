@@ -1,40 +1,66 @@
 import styles from "./Home.module.scss";
 import Image from "next/image";
 import heroImage from "../public/Subtract.png";
-import Footer from "./Footer";
-import pic1 from "../public/service1.jpg";
-import pic2 from "../public/service2.jpg";
-import pic3 from "../public/service3.jpg";
+import handleScroll from "../sub-components/SoothScroll";
 import gallery from "../sub-components/gallery";
 import Gallery from "../sub-components/gallery";
+import Carousel from "../sub-components/Carousel";
+import { useRef } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    handleResize();
+  }, []);
+
+  const [carousel, setCarousel] = useState("");
+  const setRef = (ref) => {
+    setCarousel(ref);
+    console.log(carousel);
+  };
+  const [objectFit, setObjectFit] = useState("contain");
+
+  const handleResize = () => {
+    if (window.innerWidth > 768) {
+      setObjectFit("contain");
+    } else {
+      setObjectFit("cover");
+    }
+  };
+
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroSection}>
-        {/* text part */}
-        <div className={styles.heroText}>
-          <h1>
-            Hello, I'm <span>Rengeb</span>
-          </h1>
-          <h3>Professional Renovator</h3>
-          <p>
-            Hey guys, have a look at my work and designs on my website.
-            <br></br>
-            Don't forget to look into my previous project
-          </p>
-          <div>
-            <button className={styles.button}>Contact Us</button>
-            <button className={styles.button2}>Portfolio</button>
-          </div>
-        </div>
+        <div className={styles.heroText}></div>
         {/* image part */}
         <div className={styles.imageSection}>
+          {/* text part */}
+          <div className={styles.text}>
+            <h1>
+              Hello, I&apos;m <span>Rengeb</span>
+            </h1>
+            <h3>Professional Renovator</h3>
+            <p>
+              Hey guys, have a look at my work and designs on my website.
+              <br></br>
+              Don&apos;t forget to look into my previous project
+            </p>
+            <div>
+              <button className={styles.button}>Contact Us</button>
+              <button className={styles.button2}>Portfolio</button>
+            </div>
+          </div>
           <div
             // style={{ backgroundImage: `url(../public/Subtract.png)` }}
             className={styles.image}
           >
-            {/* <Image src={heroImage} layout="fill"></Image> */}
+            <Image
+              src={heroImage}
+              placeholder="blur"
+              objectFit={objectFit}
+              layout="fill"
+            ></Image>
           </div>
         </div>
       </div>
@@ -60,14 +86,16 @@ const Home = () => {
             <h2>
               Hey guys, have a look at my work and designs on my website.
               <br />
-              Don't forget to look into my previous project.
+              Don&apos;t forget to look into my previous project.
             </h2>
             <p>
               We basically provide five types of services i.e., Renovation,
-              Plastering ,Masonry ,Flooring and Roofing. We are proud to deliver
-              projects which meets the present day needs for housing
-              <br /> and infrastructurewithout compromising the ability of
-              future generations.
+              Plastering, Masonry, Flooring and Roofing. We are proud to deliver
+              projects which meets the present day needs for housing and
+              infrastructure without compromising the ability of future
+              generations.
+              <br />
+              <br />
               <br />
               We believe each commercial building renovation project must be
               planned and executed carefully.
@@ -80,42 +108,21 @@ const Home = () => {
       <div className={styles.services}>
         <h1 className={styles.heading}>our services</h1>
         <h5 style={{ textAlign: "center" }}>WHAT WE CAN DO FOR YOU</h5>
-
-        <div className={styles.imageSection}>
-          <div className={styles.image}>
-            <Image src={pic1} width="400" height="900" />
-            <h1>
-              <span>01</span>RENNOVATION
-            </h1>
-          </div>
-          <div className={styles.image}>
-            <Image src={pic2} width="400" height="900" />
-            <h1>
-              <span>02</span>ROOFING
-            </h1>
-          </div>
-          <div className={styles.image}>
-            <Image src={pic3} width="400" height="900" />
-            <h1>
-              <span>03</span>FLOORING
-            </h1>
-          </div>
-          {/* <div className={styles.image4}>
-            <Image 
-             src={pic1}
-             width="400"
-             height="900"/>
-            </div>
-            <div className={styles.image5}>
-            <Image 
-             src={pic1}
-             width="400"
-             height="900"/>
-            </div> */}
-        </div>
+        <div
+          onClick={handleScroll({ scrollDirection: -1, element: carousel })}
+          className={styles.leftArrow}
+        ></div>
+        <div
+          onClick={handleScroll({ scrollDirection: 1, element: carousel })}
+          className={styles.rightArrow}
+        ></div>
+        <Carousel setRef={setRef}></Carousel>
       </div>
-      <Gallery></Gallery>
-      <Footer></Footer>
+      <div className={styles.portfolio}>
+        <h1>PORTFOLIO</h1>
+        <h5>FINISHED PROJECTS</h5>
+        <Gallery></Gallery>
+      </div>
     </div>
   );
 };

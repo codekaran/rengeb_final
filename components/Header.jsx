@@ -20,8 +20,16 @@ const Header = () => {
     }
   };
   const handleBurgerClick = () => {
-    let status = isBurgerMenuClicked ? false : true;
-    setIsBurgerMenuClicked(status);
+    // cons;
+    if (window.innerWidth <= 700) {
+      let status = isBurgerMenuClicked ? false : true;
+      if (status) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+      setIsBurgerMenuClicked(status);
+    }
   };
 
   return (
@@ -62,13 +70,27 @@ const Header = () => {
         className={styles.flex_box}
       >
         <div className={styles.container}>
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/serivces">Services</Link>
+          <Link href="/">
+            <a onClick={handleBurgerClick} href="">
+              Home
+            </a>
+          </Link>
+          <Link href="/about">
+            <a onClick={handleBurgerClick} href="">
+              About
+            </a>
+          </Link>
+          <Link href="/services">
+            <a onClick={handleBurgerClick} href="">
+              Services
+            </a>
+          </Link>
         </div>
-        <div className={styles.container}>
+        <div className={styles.container1}>
           <Link href="/contact" passHref>
-            <button>Contact Us</button>
+            <a onClick={handleBurgerClick} href="">
+              <button>Contact Us</button>
+            </a>
           </Link>
         </div>
       </div>

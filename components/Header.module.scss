@@ -19,7 +19,7 @@
     flex: 0.5;
     display: flex;
     align-items: center;
-
+    justify-content: space-around;
     .container {
       position: relative;
       flex: 0.5;
@@ -36,8 +36,21 @@
         font-size: 20px;
         line-height: 18px;
         color: white;
+        &:hover {
+          color: #e4743b;
+        }
       }
+
+      select {
+        border: none;
+        outline: none;
+        padding: 0px 8px;
+        text-transform: uppercase;
+      }
+    }
+    .container1 {
       button {
+        all: unset;
         width: 148px;
         height: 50px;
         background: #e4743b;
@@ -49,12 +62,11 @@
         line-height: 18px;
         color: #f4f4f4;
         cursor: pointer;
-      }
-      select {
-        border: none;
-        outline: none;
-        padding: 0px 8px;
-        text-transform: uppercase;
+        text-align: center;
+        &:hover {
+          color: #e4743b;
+          background: #f4f4f4;
+        }
       }
     }
   }
@@ -92,7 +104,7 @@
       transition: 0.5s ease-in;
       background-color: white;
       color: black;
-      justify-content: center;
+      justify-content: unset;
       align-items: center;
       width: 100vw;
       z-index: 101;
@@ -105,17 +117,24 @@
       transform: translateX(100%);
       .container {
         flex-direction: column;
+        width: 100%;
         &:first-of-type {
           width: 100%;
           justify-content: center;
         }
         a {
           color: black;
-          padding: 20px;
+          padding: 45px;
+          font-size: 25px;
           &:hover {
             color: white;
             background-color: #505050;
           }
+        }
+      }
+      .container1 {
+        a > button {
+          font-size: 25px;
         }
       }
     }

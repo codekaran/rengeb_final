@@ -1,190 +1,295 @@
-.conatiner{
-
-}
-$headcolor:#e4743b;
-.aboutus{
-    h1{
-        font-size: 5rem;
-        color: $headcolor;
-        font-style: Montserrat;
-        text-align: center;
+$headColor: #e4743b;
+.aboutcontainer {
+  .aboutus {
+    padding: 50px;
+    padding-top: 150px;
+    text-align: center;
+    h1 {
+      font-size: 4rem;
+      color: $headColor;
+      font-style: Montserrat;
+      text-align: center;
     }
-    #abt3{
-        text-align: center;
+    #abt3 {
+      text-align: center;
       font-size: 1.5rem;
       font-family: Montserrat-Medium;
       font-weight: 500;
       letter-spacing: 0.2em;
-      margin-bottom: 10%;
+      margin: 50px 0;
     }
 
-    .abouttxt{
-        margin:2rem;
-    h3{
+    .abouttxt {
+      margin: 2rem;
+      h3 {
         font-size: 2rem;
-    font-family: Montserrat-Bold;
-     font-weight: 700;
-        
-    }
-    h5{
-        font-size: 1.4rem;
-    font-family: Montserrat-Medium;
-     font-weight: 500;
-     line-height: 1.9;
-    }
-    button{
-
-            background-color: #e4743b;
-          border: none;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          font-size: 20px;
-          margin: 4px 10px;
-         
-        }
-    }
-    
-}
-.column2{
- 
-    background-color:black;
-    .image{
-        
-        background-size: cover;
-        opacity: 0.3;
-        width: 100%;
+        font-family: Montserrat-Bold;
+        font-weight: 700;
       }
-    .row {
-        display:flex;
-        justify-content:space-around;
-        position: absolute;
-        top: 180%;
-        width: 100%;
-   
-        h1{
-            color:$headcolor;
-            margin-bottom: 5%;
-            font-size: 4rem;
-            font-family: Montserrat-Bold;
-            font-weight: 700;
-        }
-        h4{
-            color: white;
-            font-size: 1.5rem;
-            font-family: Montserrat-Medium;
-            font-weight: 500;
-        }
+      h5 {
+        font-size: 1.4rem;
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        line-height: 1.9;
+        margin-top: 50px;
+      }
+      button {
+        background-color: $headColor;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 50px;
+      }
     }
   }
-  .social{
-      .thought{
-          padding-top: 5rem;
-          padding-bottom: 6rem;
-      }
-      p{
-        // margin-Top:"10%";
-         margin-Bottom:0px;
-        // margin-Left:"26%";
-         text-align: center;
-         font-size: 3rem;
-         font-family:Montserrat-Bold;
-         font-weight:700;
-      }
-      a{
-          color:$headcolor;
-      }
-      span{
-               margin-left: 64%;
-                font-size: 2rem;
-                font-family:'Roboto';
-                font-style: italic;
-            
-      }
-      .followus{
-            display: flex;
-            justify-content: space-between;
-            color: aliceblue;
-            background-color: $headcolor;
-            
-            
-            h3{
-                margin: 2rem;
-                padding: 2rem;
-                font-size: xx-large;
-            }
-            .Sicons{
-                margin: 2rem;
-                padding: 1rem;
-            }
-  
-            #fa{
-               
-                padding: 10px;
-                font-size: 30px;
-                height: 55px;
-                width: 55px;
-                text-decoration: none;
-                margin: 15px 29px;
-                color: white;
-          }
-        }
-       
+  .column2 {
+    background-color: black;
+    position: relative;
+    .aboutImage {
+      position: relative;
+      height: 70vh;
+      width: 100%;
     }
+    .row {
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
 
-    .heading{
-        padding-left: 3rem;
-        h4{
-            color:$headcolor;
-            font-size: 2.5rem;
-        }
-        p{
-            font-size: large;
-        }
+      h1 {
+        color: $headColor;
+        margin-bottom: 5%;
+        font-size: 4rem;
+        font-family: Montserrat-Bold;
+        font-weight: 700;
+      }
+      h4 {
+        color: white;
+        font-size: 1.5rem;
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+      }
     }
-    .contact{
-       
+  }
+  .social {
+    display: flex;
+    justify-content: center;
+    .thought {
+      padding-top: 5rem;
+      padding-bottom: 6rem;
+      p {
+        margin-bottom: 0px;
+        text-align: center;
+        font-size: 3rem;
+        font-family: Montserrat-Bold;
+        font-weight: 700;
+      }
+      a {
+        color: $headColor;
+      }
+      .author {
+        font-size: 2rem;
+        font-family: "Roboto";
+        font-style: italic;
+        text-align: right;
+      }
+    }
+  }
+  .contact {
+    background-color: #f3f3f3;
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .connect {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .heading {
+        padding-left: 20%;
+        p {
+          font-size: large;
+        }
+        h3 {
+          font-size: 40px;
+          font-family: "montserrat-Bold";
+          font-weight: 700;
+        }
+      }
+
+      .contactInfo {
         display: flex;
-         flex-direction:row;
-       
-          .connect{
-                width: 50%;
-                 display: flex;
-                
-                    .cicon{
-                      
-                       display:grid;
-                        padding: 15px;
-                        text-align: center;
-                        padding-left: 3rem;
-                        color:$headcolor;
-                      
-                        i{
-                           
-                            background-color: whitesmoke;
-                            padding-top: 1rem;
-                            width: 90px;
-                            height: 90px;
-                            border-radius: 45%;
-                            
-                            font-size:60px;
-                        }
-                    }
-                    .cinfo{
-                        padding-left: 3rem;
-                        display:grid;
-                        h3{
-                    //         fontSize:25,
-                    // fontfamily:"Montserrat",
-                    // fontweight: 700
-                    font-size: 25;
-                    font-family: "montserrat-Bold";
-                    font-weight: 700;
-                        }
-                    }
+        padding-left: 20%;
+        align-items: center;
+        // width: 0;
+        // flex-grow: 1;
+        .icons {
+          position: relative;
+          width: 80px;
+          height: 80px;
+        }
+        .info {
+          margin-left: 30px;
+          h3 {
+            font-size: 30px;
+            margin-bottom: 10px;
           }
-          .cimage{
-              
-            
+          p {
+            font-size: 20px;
           }
+        }
+      }
     }
+    .cimage {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .followus {
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+    background-color: #e97d46;
+    position: relative;
+    overflow: hidden;
+    .sheer1 {
+      top: -150px;
+      position: absolute;
+      background-color: #e3895b;
+      transform: rotate(45deg) skew(10deg);
+      height: 200%;
+      width: 200px;
+      left: 0;
+    }
+    .sheer2 {
+      left: 200px;
+      top: -120px;
+      position: absolute;
+      background-color: #e97d46;
+      transform: rotate(45deg) skew(10deg);
+      height: 230%;
+      width: 200px;
+    }
+    h3 {
+      z-index: 1;
+      margin: 2rem;
+      padding: 2rem;
+      font-size: 51px;
+    }
+    .Sicons {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      margin: 2rem;
+      padding: 1rem;
+      .icons {
+        margin: 1rem 3rem;
+        width: 45px;
+        height: 45px;
+        position: relative;
+      }
+      Image {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .aboutcontainer {
+    .aboutus {
+      padding: 10px;
+      h1 {
+        font-size: 40px;
+      }
+      .abouttxt {
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .column2 {
+      .row {
+        flex-direction: column;
+        text-align: center;
+        h1 {
+          font-size: 3rem;
+        }
+      }
+    }
+    .social {
+      .thought {
+        p {
+          font-size: 2rem;
+        }
+        .author {
+        }
+      }
+    }
+    .contact {
+      .connect {
+        padding: 10px;
+        width: 100%;
+
+        .heading {
+          padding: 0;
+          p {
+            display: none;
+          }
+          h3 {
+            text-align: center;
+            font-size: 30px;
+          }
+        }
+        .contactInfo {
+          text-align: center;
+          flex-direction: column;
+
+          padding: 0;
+          margin-top: 50px;
+          .icons {
+            height: 50px;
+            width: 50px;
+            margin-bottom: 20px;
+          }
+          .info {
+            margin-left: 0;
+            h3 {
+              font-size: 20px;
+            }
+            p {
+            }
+          }
+        }
+      }
+      .cimage {
+        display: none;
+      }
+    }
+    .followus {
+      height: 180px;
+      padding: 15px 40px;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: center;
+      h3 {
+        padding: 0;
+        font-size: 30px;
+        margin: 0;
+      }
+      .Sicons {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        .icons {
+          height: 25px;
+          width: 25px;
+        }
+      }
+    }
+  }
+}

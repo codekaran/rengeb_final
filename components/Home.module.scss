@@ -1,20 +1,6 @@
 .homeContainer {
 }
-$headcolor:#e4743b;
-
-
-.button{
-  background-color: #e4743b;
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-
-display: inline-block;
-font-size: 16px;
-margin: 4px 10px;
-}
-
+$headcolor: #e4743b;
 
 .heroSection {
   display: flex;
@@ -24,154 +10,275 @@ margin: 4px 10px;
     justify-content: center;
     width: 40%;
     z-index: 1;
-    // margin-left: 10px;
-    transform: translateX(50px);
-    h1 {
-      letter-spacing: 5px;
-      font-style: Montserrat;
-      font-size: 54px;
-      color: #505050;
-      span {
-        color: $headcolor;
-      }
-    }
-    h3 {
-      font-size: 30px;
-      text-transform: uppercase;
-    }
-    p {
-      line-height: 30px;
-      font-size: 20px;
-    }
-   
-    .button2{
-      background-color: white;
-      border: 2px solid $headcolor;
-    color: $headcolor;
-    padding: 13px 38px;
-    text-align: center;
-    
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 10px;
-    }
+
+    // transform: translateX(100px);
   }
   .imageSection {
-    background-color: rgb(223, 223, 223);
+    background-color: #f3f3f3;
     width: 70%;
+    position: relative;
+    .text {
+      z-index: 1;
+      position: absolute;
+      left: -440px;
+      top: 50%;
+      transform: translateY(-50%);
+      h1 {
+        font-weight: normal;
+        letter-spacing: 5px;
+        font-style: Montserrat;
+        font-size: 80px;
+        color: #505050;
+        span {
+          color: $headcolor;
+        }
+      }
+      h3 {
+        // font-weight: normal;
+        font-size: 35px;
+        text-transform: uppercase;
+        margin-top: 3rem;
+      }
+      p {
+        margin-top: 2rem;
+        line-height: 30px;
+        font-size: 20px;
+      }
+      .button {
+        background-color: #e4743b;
+        border: none;
+        color: white;
+        padding: 20px 38px;
+        text-align: center;
+
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 40px;
+      }
+      .button2 {
+        background-color: white;
+        border: 2px solid $headcolor;
+        color: $headcolor;
+        padding: 19px 44px;
+        text-align: center;
+
+        display: inline-block;
+        font-size: 16px;
+        margin-left: 20px;
+      }
+    }
     // float: right;
     .image {
       width: 85%;
       position: relative;
       height: 100vh;
       float: right;
-      background-image: url("../public/Subtract.png");
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: 100%;
     }
   }
-  
 }
-.aboutSection{
-    display:flex;
-     flex-direction: column;
-  .heading{
-       color: $headcolor;
-     font-style: Montserrat;
-     font-size: 54px;
-     text-align: center;
-     
-  }
-   .maincolumn{
-       display: flex;
-       justify-content: space-around;
-  .cardcolumn{
-    width: 30%;
-    // float: left;
-    margin-left:15px;
-    
-      p{
-      display: flex;
-      flex-direction: column;
-      background-color: whitesmoke;
-       text-align: center;
-      font-family: Montserrat-Bold, Montserrat;
-      font-weight: 700; 
-      padding:3rem 1rem;
-     
-    }
-      span{
-        color:rgb(228, 116, 59);
-        margin-bottom: 5%;
-        font-size: x-large;
-       font-family: Montserrat-Bold,Montserrat;
-       font-weight: 700;
+.aboutSection {
+  padding: 100px 50px;
 
-      }
-    
-  }
-  .aboutcolumn{
-    width: 60%;
-    // float: right;
-    padding: 4rem 2rem;
-    h3{
-      word-spacing: 10px;
-      margin:20px 0px;
-      
-    }
-    p{
-      font-weight: 500;
-      font-size: 65;
-      word-spacing: 10px;
-    }
-  }
-  } 
-}
-.services{
   display: flex;
   flex-direction: column;
-  .heading{
-    
-      color: $headcolor;
+  .heading {
+    color: $headcolor;
     font-style: Montserrat;
-    font-size: 54px;
-    text-transform: uppercase;
+    font-size: 50px;
     text-align: center;
+    margin-bottom: 40px;
   }
-  .imageSection{
-   display: flex;
-  
-    .image{
-      padding: 2px;
-      // background: url(/public/service1.jpg);
-      h1{
-        position: relative;
-        color:white;
-        bottom: 30%;
-        left: 16px;
+  .maincolumn {
+    display: flex;
+    justify-content: space-around;
+    .cardcolumn {
+      width: 30%;
+      // float: left;
+      margin-left: 15px;
+
+      p {
         display: flex;
         flex-direction: column;
-        span{
-           margin-bottom: 15%;
-           
-        }
-      
-        
-    
+        background-color: whitesmoke;
+        text-align: center;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
+        padding: 5rem 1rem;
+        margin-top: 30px;
+      }
+      span {
+        color: rgb(228, 116, 59);
+        margin-bottom: 5%;
+        font-size: x-large;
+        font-family: Montserrat-Bold, Montserrat;
+        font-weight: 700;
       }
     }
-    // .image2{
-    //   background: url(/public/service2.jpg);
-    // }
-    // .image3{
-    //   background: url(/public/service3.jpg);
-    // }
-    // .image4{
-    //   background: url(/public/service4.jpg);
-    // }
-    // .image5{
-    //   background: url(/public/service5.jpg);
-    // }
+    .aboutcolumn {
+      width: 60%;
+      // float: right;
+      padding: 4rem 2rem;
+      h3 {
+        word-spacing: 10px;
+        margin: 20px 0px;
+        // font-size: 30px;
+      }
+      h2 {
+        font-size: 2em;
+        margin-top: 20px;
+      }
+      p {
+        font-weight: 500;
+        font-size: 20px;
+        margin-top: 30px;
+        word-spacing: 10px;
+        line-height: 30px;
+        padding-right: 13vw;
+      }
+      .button {
+        background-color: #e4743b;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+// service section
+.services {
+  position: relative;
+  padding-bottom: 100px;
+  padding-top: 50px;
+  .leftArrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    background-image: url("../public/arrowLeft.png");
+    background-position: center;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transform: scale(0.8);
+    &:active {
+      transform: scale(1);
+    }
+  }
+  .rightArrow {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 50%;
+    background-image: url("../public/arrowRight.png");
+    background-position: center;
+    min-width: 60px;
+    height: 60px;
+    background-size: cover;
+    cursor: pointer;
+    transform: scale(0.8);
+    &:active {
+      transform: scale(1);
+    }
+  }
+  background-color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  .heading {
+    color: $headcolor;
+    font-style: Montserrat;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  h5 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 40px;
+  }
+}
+
+// portfolio
+.portfolio {
+  padding: 100px 50px;
+  h1 {
+    color: $headcolor;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    // margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  h5 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .heroSection {
+    .heroText {
+      width: 0;
+    }
+    .imageSection {
+      width: 100%;
+
+      .text {
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.582);
+        left: 0;
+        top: 0;
+        transform: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+          color: white;
+          font-size: 7vw;
+        }
+        h3 {
+          color: white;
+          font-size: 25px;
+        }
+        p {
+          color: white;
+        }
+      }
+      .image {
+        width: 100%;
+      }
+    }
+  }
+  .aboutSection {
+    padding: 100px 20px;
+    .maincolumn {
+      flex-direction: column;
+      .cardcolumn {
+        order: 1;
+        width: 100%;
+        margin: 0;
+      }
+      .aboutcolumn {
+        padding: 0;
+        width: 100%;
+        text-align: center;
+        p {
+          padding: 0;
+        }
+        h2 {
+          font-size: 25px;
+        }
+      }
+    }
   }
 }
