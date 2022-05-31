@@ -175,6 +175,9 @@ $headcolor: #e4743b;
         width: 45px;
         height: 45px;
         position: relative;
+        &:nth-child(1) {
+          width: 30px;
+        }
       }
       Image {
         margin-left: 5px;

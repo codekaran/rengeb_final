@@ -187,11 +187,15 @@ $headColor: #e4743b;
       display: flex;
       margin: 2rem;
       padding: 1rem;
+
       .icons {
         margin: 1rem 3rem;
         width: 45px;
         height: 45px;
         position: relative;
+        &:nth-child(1) {
+          width: 30px;
+        }
       }
       Image {
         margin-left: 5px;
@@ -288,6 +292,9 @@ $headColor: #e4743b;
         .icons {
           height: 25px;
           width: 25px;
+          &:nth-child(1) {
+            width: 15px;
+          }
         }
       }
     }

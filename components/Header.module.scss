@@ -22,7 +22,7 @@
     justify-content: space-around;
     .container {
       position: relative;
-      flex: 0.5;
+      flex: 1;
       display: flex;
       justify-content: space-evenly;
 
@@ -119,6 +119,7 @@
         flex-direction: column;
         width: 100%;
         &:first-of-type {
+          flex: 0.5;
           width: 100%;
           justify-content: center;
         }
