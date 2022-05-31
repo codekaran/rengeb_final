@@ -7,6 +7,7 @@ import Gallery from "../sub-components/gallery";
 import Carousel from "../sub-components/Carousel";
 import { useRef } from "react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Home = () => {
   useEffect(() => {
@@ -47,7 +48,9 @@ const Home = () => {
               Don&apos;t forget to look into my previous project
             </p>
             <div>
-              <button className={styles.button}>Contact Us</button>
+              <button className={styles.button}>
+                <Link href="/contact">Contact Us</Link>
+              </button>
               <button className={styles.button2}>Portfolio</button>
             </div>
           </div>
@@ -100,7 +103,9 @@ const Home = () => {
               We believe each commercial building renovation project must be
               planned and executed carefully.
             </p>
-            <button className={styles.button}>READ MORE</button>
+            <button className={styles.button}>
+              <Link href="/about">READ MORE</Link>
+            </button>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import styles from "./About.module.scss";
 import pic from "../public/aboutImage.png";
 import pic2 from "../public/planning.jpg";
+import Link from "next/link";
 
 import Image from "next/image";
 const About = () => {
@@ -36,7 +37,9 @@ const About = () => {
             planned and executed carefully.
           </h5>
 
-          <button className={styles.button}>View Our Services</button>
+          <button className={styles.button}>
+            <Link href="/services">View Our Services</Link>
+          </button>
         </div>
       </div>
       {/* Experience Section */}
