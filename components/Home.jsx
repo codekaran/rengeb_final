@@ -8,8 +8,10 @@ import Carousel from "../sub-components/Carousel";
 import { useRef } from "react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import parser from "react-html-parser";
 
-const Home = () => {
+const Home = (props) => {
+  let { sections } = props.text;
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
@@ -38,20 +40,20 @@ const Home = () => {
         <div className={styles.imageSection}>
           {/* text part */}
           <div className={styles.text}>
-            <h1>
-              Hello, I&apos;m <span>Rengeb</span>
-            </h1>
-            <h3>Professional Renovator</h3>
-            <p>
-              Hey guys, have a look at my work and designs on my website.
-              <br></br>
-              Don&apos;t forget to look into my previous project
-            </p>
+            <h1 className={styles.heading}>{parser(sections[0].Heading)}</h1>
+            <h3 className={styles.sub_heading}>
+              {parser(sections[0].SubHeading)}
+            </h3>
+            <p>{parser(sections[0].Intro)}</p>
             <div>
               <button className={styles.button}>
-                <Link href="/contact">Contact Us</Link>
+                <Link href="/contact">
+                  <a>{parser(sections[0].Button1)}</a>
+                </Link>
               </button>
-              <button className={styles.button2}>Portfolio</button>
+              <button className={styles.button2}>
+                {parser(sections[0].Button2)}
+              </button>
             </div>
           </div>
           <div
@@ -70,7 +72,7 @@ const Home = () => {
 
       {/* About us Section */}
       <div className={styles.aboutSection}>
-        <h1 className={styles.heading}>ABOUT US</h1>
+        <h1 className={styles.heading}>{parser(sections[1].Heading)}</h1>
 
         <div className={styles.maincolumn}>
           <div className={styles.cardcolumn}>
@@ -85,34 +87,29 @@ const Home = () => {
             </p>
           </div>
           <div className={styles.aboutcolumn}>
-            <h3>WHO WE ARE</h3>
-            <h2>
-              Hey guys, have a look at my work and designs on my website.
-              <br />
-              Don&apos;t forget to look into my previous project.
-            </h2>
+            <h3>{parser(sections[1].SubHeading1)}</h3>
+            <h2>{parser(sections[1].SubHeading2)}</h2>
             <p>
-              We basically provide five types of services i.e., Renovation,
-              Plastering, Masonry, Flooring and Roofing. We are proud to deliver
-              projects which meets the present day needs for housing and
-              infrastructure without compromising the ability of future
-              generations.
+              {parser(sections[1].Intro1)}
               <br />
               <br />
               <br />
-              We believe each commercial building renovation project must be
-              planned and executed carefully.
+              {parser(sections[1].Intro2)}
             </p>
             <button className={styles.button}>
-              <Link href="/about">READ MORE</Link>
+              <Link href="/about">
+                <a>{parser(sections[1].button)}</a>
+              </Link>
             </button>
           </div>
         </div>
       </div>
       {/* Our Service Section */}
       <div className={styles.services}>
-        <h1 className={styles.heading}>our services</h1>
-        <h5 style={{ textAlign: "center" }}>WHAT WE CAN DO FOR YOU</h5>
+        <h1 className={styles.heading}>{parser(sections[2].Heading)}</h1>
+        <h5 style={{ textAlign: "center" }}>
+          {parser(sections[2].SubHeading)}
+        </h5>
         <div
           onClick={handleScroll({ scrollDirection: -1, element: carousel })}
           className={styles.leftArrow}
@@ -121,11 +118,11 @@ const Home = () => {
           onClick={handleScroll({ scrollDirection: 1, element: carousel })}
           className={styles.rightArrow}
         ></div>
-        <Carousel setRef={setRef}></Carousel>
+        <Carousel text={sections[2]} setRef={setRef}></Carousel>
       </div>
       <div className={styles.portfolio}>
-        <h1>PORTFOLIO</h1>
-        <h5>FINISHED PROJECTS</h5>
+        <h1>{parser(sections[3].Heading)}</h1>
+        <h5>{parser(sections[3].SubHeading)}</h5>
         <Gallery></Gallery>
       </div>
     </div>

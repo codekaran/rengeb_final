@@ -23,7 +23,7 @@ $headcolor: #e4743b;
       left: -440px;
       top: 50%;
       transform: translateY(-50%);
-      h1 {
+      .heading {
         font-weight: normal;
         letter-spacing: 5px;
         font-style: Montserrat;
@@ -33,7 +33,7 @@ $headcolor: #e4743b;
           color: $headcolor;
         }
       }
-      h3 {
+      .sub_heading {
         // font-weight: normal;
         font-size: 35px;
         text-transform: uppercase;

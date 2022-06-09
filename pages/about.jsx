@@ -1,7 +1,28 @@
 import About from "../components/About";
 
-const about = () => {
-  return <About></About>;
+const about = (props) => {
+  return <About text={props.content}></About>;
 };
 
+export async function getStaticProps({ locale }) {
+  const lang = locale === "nl" ? "nl" : "en";
+  let data = {};
+  try {
+    let res = await fetch(
+      "http://localhost:8000/getData?website=rengeb&page=about&lang=" + lang
+    );
+    res = await res.json();
+    // console.log(res);
+    data = JSON.parse(res.data);
+    data["path"] = "";
+  } catch (err) {
+    console.log(err);
+  }
+  return {
+    props: {
+      content: data,
+    },
+    revalidate: 1,
+  };
+}
 export default about;

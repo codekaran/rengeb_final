@@ -1,16 +1,15 @@
 import styles from "./Contact.module.scss";
 import pic2 from "../public/planning.jpg";
-
 import Image from "next/image";
-const Contact = () => {
+import parser from "react-html-parser";
+const Contact = (props) => {
+  let { sections } = props.text;
   return (
     <div className={styles.contactContainer}>
       <div className={styles.section1}>
-        <h1>Contact Us</h1>
-        <h3>LET&apos;S CONNECT</h3>
-        <h2>
-          Drop us your message and we will back to you as soon as possible
-        </h2>
+        <h1>{parser(sections[0].Heading)}</h1>
+        <h3>{parser(sections[0].SubHeading1)}</h3>
+        <h2>{parser(sections[0].SubHeading2)}</h2>
         <div className={styles.form}>
           <div className={styles.row1}>
             <label>First Name</label>
@@ -67,18 +66,16 @@ const Contact = () => {
       <div className={styles.contact}>
         <div className={styles.connect}>
           <div className={styles.heading}>
-            <p>KEEP IN TOUCH</p>
-            <h3>
-              LET&apos;S START A FRUITFUL <br /> CONVERSATION.
-            </h3>
+            <p>{parser(sections[1].Heading)}</p>
+            <h3>{parser(sections[1].SubHeading)}</h3>
           </div>
           <div className={styles.contactInfo}>
             <div className={styles.icons}>
               <Image src={"/icon_phone.png"} layout={"fill"} />
             </div>
             <div className={styles.info}>
-              <h3>Call Us 24/7</h3>
-              <p>(+1)800-600-2323</p>
+              <h3>{parser(sections[1].CallHeading)}</h3>
+              <p>{parser(sections[1].Number)}</p>
             </div>
           </div>
           <div className={styles.contactInfo}>
@@ -86,8 +83,8 @@ const Contact = () => {
               <Image src={"/icon_mail.png"} layout={"fill"} />
             </div>
             <div className={styles.info}>
-              <h3>Mail Us 24/7 </h3>
-              <p>Info@rengebxweb.co.in</p>
+              <h3>{parser(sections[1].MailHeading)} </h3>
+              <p>{parser(sections[1].Mail)}</p>
             </div>
           </div>
           <div className={styles.contactInfo}>
@@ -95,12 +92,8 @@ const Contact = () => {
               <Image src={"/icon_location.png"} layout={"fill"} />
             </div>
             <div className={styles.info}>
-              <h3>Visit Us 24/7</h3>
-              <p>
-                {" "}
-                1508 North Street, <br />
-                AustinTexas,US
-              </p>
+              <h3>{parser(sections[1].AddressHeading)}</h3>
+              <p>{parser(sections[1].Address)}</p>
             </div>
           </div>
         </div>

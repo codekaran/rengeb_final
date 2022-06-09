@@ -1,76 +1,39 @@
 import styles from "./Service.module.scss";
 // import ReactPlayer from "react-player";
 import Image from "next/image";
+import parser from "react-html-parser";
 
-const serviceArr = [
-  {
-    src: "/renovation.jpg",
-    heading: "RENOVATION",
-    intro:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum magnam ratione ex",
-  },
-  {
-    src: "/roofing.jpg",
-    heading: "ROOFING",
-    intro:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum magnam ratione ex",
-  },
-  {
-    src: "/flooring.jpg",
-    heading: "FLOORING",
-    intro:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum magnam ratione ex",
-  },
-  {
-    src: "/masonry.jpg",
-    heading: "MASONARY",
-    intro:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum magnam ratione ex",
-  },
-  {
-    src: "/plastering.jpg",
-    heading: "PLASTERING",
-    intro:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum magnam ratione ex",
-  },
-];
-
-const Service = () => {
+const Service = (props) => {
+  let { sections } = props.text;
+  const images = [
+    "/renovation.jpg",
+    "/roofing.jpg",
+    "/flooring.jpg",
+    "/masonry.jpg",
+    "/plastering.jpg",
+  ];
+  const serviceArr = [];
+  let text = sections[1];
+  for (let index = 1; index <= 5; index++) {
+    serviceArr.push({
+      src: images[index - 1],
+      heading: text["CardHeading" + index],
+      intro: text["CardIntro" + index],
+    });
+  }
   return (
     <div className={styles.ourservices}>
       <div className={styles.service}>
-        <h1>OUR SERVICES</h1>
+        <h1>{parser(sections[0].Heading)}</h1>
         <div className={styles.subHeading}>
           <div className={styles.hammer}></div>
-          <h5 id={styles.abt}> WHAT WE CAN DO FOR YOU </h5>
+          <h5 id={styles.abt}> {parser(sections[0].SubHeading1)} </h5>
         </div>
 
         <div id={styles.abt2}>
-          <h3>
-            Hey guys, have a look at my work and designs on my website.
-            <br />
-            Don&apos;t forget to look into my previous project.
-          </h3>
-          <p style={{ marginTop: `50px` }}>
-            We basically provide five types of services i.e., Renovation,
-            Plastering, Masonry, Flooring and Roofing. We are proud to deliver
-            projects which meets the present day needs for housing and
-            infrastructurewithout compromising the ability of future
-            generations.
-            <br />
-            We believe each commercial building renovation project must be
-            planned and executed carefully.
-          </p>
-          <p>
-            We basically provide five types of services i.e., Renovation,
-            Plastering, Masonry, Flooring and Roofing. We are proud to deliver
-            projects which meets the present day needs for housing and
-            infrastructurewithout compromising the ability of future
-            generations.
-            <br />
-            We believe each commercial building renovation project must be
-            planned and executed carefully.
-          </p>
+          <h3>{parser(sections[0].SubHeading2)}</h3>
+          <p style={{ marginTop: `50px` }}>{parser(sections[0].Intro1)}</p>
+          <p>{parser(sections[0].Intro2)}</p>
         </div>
       </div>
       <div className={styles.videoContainer}>

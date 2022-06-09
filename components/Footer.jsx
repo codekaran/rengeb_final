@@ -5,8 +5,19 @@ import twitter from "../public/twitter.png";
 import linked from "../public/linked.png";
 import insta from "../public/insta.png";
 import facebook from "../public/facebook.png";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
-const Footer = () => {
+const Footer = (props) => {
+  let router = useRouter();
+  const [lang, setLang] = useState(router.locale === "nl" ? "ENG" : "DUTCH");
+
+  const handleLanguageChange = () => {
+    let locale = router.locale;
+    let lang = locale === "nl" ? "ENG" : "DUTCH";
+    setLang(lang);
+  };
+  console.log(props);
   return (
     <div className={styles.footerContainer}>
       <div className={styles.section1}>
@@ -63,6 +74,15 @@ const Footer = () => {
             North Street, Austin<br></br>Texas,US
           </li>
         </ul>
+        <div className={styles.languageChange}>
+          <div className={styles.langImage}></div>
+          <Link
+            href={router.asPath}
+            locale={router.locale === "nl" ? "en" : "nl"}
+          >
+            <a onClick={handleLanguageChange}>{lang}</a>
+          </Link>
+        </div>
       </div>
       <div className={styles.copyright}>
         Copyright©2022 Rengeb. All Rights Reserved.

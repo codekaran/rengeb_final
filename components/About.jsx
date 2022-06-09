@@ -2,43 +2,24 @@ import styles from "./About.module.scss";
 import pic from "../public/aboutImage.png";
 import pic2 from "../public/planning.jpg";
 import Link from "next/link";
-
+import parser from "react-html-parser";
 import Image from "next/image";
-const About = () => {
+const About = (props) => {
+  let { sections } = props.text;
   return (
     <div className={styles.aboutcontainer}>
       <div className={styles.aboutus}>
-        <h1>ABOUT US </h1>
-        <h5 id={styles.abt3}> WHO WE ARE </h5>
+        <h1>{parser(sections[0].Heading)}</h1>
+        <h5 id={styles.abt3}> {parser(sections[0].SubHeading1)} </h5>
         <div className={styles.abouttxt}>
-          <h3>
-            Hey guys, have a look at my work and designs on my website.
-            <br />
-            Don&apos;t forget to look into my previous project.
-          </h3>
-          <h5>
-            We basically provide five types of services i.e., Renovation,
-            Plastering ,Masonry ,Flooring and Roofing. We are proud to deliver
-            projects which meets the present day needs for housing and
-            infrastructurewithout compromising the ability of future
-            generations.
-            <br />
-            We believe each commercial building renovation project must be
-            planned and executed carefully.
-          </h5>
-          <h5>
-            We basically provide five types of services i.e., Renovation,
-            Plastering ,Masonry ,Flooring and Roofing. We are proud to deliver
-            projects which meets the present day needs for housing and
-            infrastructurewithout compromising the ability of future
-            generations.
-            <br />
-            We believe each commercial building renovation project must be
-            planned and executed carefully.
-          </h5>
+          <h3>{parser(sections[0].SubHeading2)}</h3>
+          <h5>{parser(sections[0].Intro1)}</h5>
+          <h5>{parser(sections[0].Intro2)}</h5>
 
           <button className={styles.button}>
-            <Link href="/services">View Our Services</Link>
+            <Link href="/services">
+              <a>{parser(sections[0].Button)}</a>
+            </Link>
           </button>
         </div>
       </div>
@@ -49,15 +30,15 @@ const About = () => {
         </div>
         <div className={styles.row}>
           <div>
-            <h1>350+</h1>
+            <h1>{parser(sections[1].TrustedClients)}</h1>
             <h4>Trusted Clients</h4>
           </div>
           <div>
-            <h1>215+</h1>
+            <h1>{parser(sections[1].FinishedProject)}</h1>
             <h4>Finished Project</h4>
           </div>
           <div>
-            <h1>15+</h1>
+            <h1>{parser(sections[1].YearsOfExperience)}</h1>
             <h4>Years Of Experience</h4>
           </div>
         </div>
@@ -67,11 +48,10 @@ const About = () => {
 
       <div className={styles.social}>
         <div className={styles.thought}>
-          <p>
-            With Destruction <br />
-            Comes <a>RENOVATION</a>
+          <p>{parser(sections[2].Quote)}</p>
+          <p className={styles.author}>
+            &quot;{parser(sections[2].Author)}&quot;
           </p>
-          <p className={styles.author}>&quot;Willy Lamb&quot;</p>
         </div>
       </div>
       {/* Contact Us Section */}
@@ -98,18 +78,16 @@ const About = () => {
       <div className={styles.contact}>
         <div className={styles.connect}>
           <div className={styles.heading}>
-            <p>KEEP IN TOUCH</p>
-            <h3>
-              LET&apos;S START A FRUITFUL <br /> CONVERSATION.
-            </h3>
+            <p>{parser(sections[3].Heading)}</p>
+            <h3>{parser(sections[3].SubHeading)}</h3>
           </div>
           <div className={styles.contactInfo}>
             <div className={styles.icons}>
               <Image src={"/icon_phone.png"} layout={"fill"} />
             </div>
             <div className={styles.info}>
-              <h3>Call Us 24/7</h3>
-              <p>(+1)800-600-2323</p>
+              <h3>{parser(sections[3].CallHeading)}</h3>
+              <p>{parser(sections[3].Number)}</p>
             </div>
           </div>
           <div className={styles.contactInfo}>
@@ -117,8 +95,8 @@ const About = () => {
               <Image src={"/icon_mail.png"} layout={"fill"} />
             </div>
             <div className={styles.info}>
-              <h3>Mail Us 24/7 </h3>
-              <p>Info@rengebxweb.co.in</p>
+              <h3>{parser(sections[3].MailHeading)}</h3>
+              <p>{parser(sections[3].Mail)}</p>
             </div>
           </div>
           <div className={styles.contactInfo}>
@@ -126,12 +104,8 @@ const About = () => {
               <Image src={"/icon_location.png"} layout={"fill"} />
             </div>
             <div className={styles.info}>
-              <h3>Visit Us 24/7</h3>
-              <p>
-                {" "}
-                1508 North Street, <br />
-                AustinTexas,US
-              </p>
+              <h3>{parser(sections[3].AddressHeading)}</h3>
+              <p>{parser(sections[3].Address)}</p>
             </div>
           </div>
         </div>

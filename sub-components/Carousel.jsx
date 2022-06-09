@@ -1,40 +1,18 @@
 import { useRef } from "react";
 import styles from "./Carousel.module.scss";
 import Image from "next/image";
-let serviceImages = [
-  {
-    src: "/service1.jpg",
-    heading: "RENNOVATION",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident reprehenderit iure quis quisquam hic ea laudantium.",
-  },
-  {
-    src: "/service2.jpg",
-    heading: "ROOFING",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident reprehenderit iure quis quisquam hic ea laudantium.",
-  },
-  {
-    src: "/service3.jpg",
-    heading: "FLOORING",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident reprehenderit iure quis quisquam hic ea laudantium.",
-  },
-  {
-    src: "/service4.jpg",
-    heading: "FLOORING",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident reprehenderit iure quis quisquam hic ea laudantium. ",
-  },
-  {
-    src: "/service5.jpg",
-    heading: "FLOORING",
-    text:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident reprehenderit iure quis quisquam hic ea laudantium. ",
-  },
-];
 
 const Carousel = (props) => {
+  let text = props.text;
+  let serviceImages = [];
+  console.log(text);
+  for (let index = 1; index <= 5; index++) {
+    serviceImages.push({
+      src: "/service" + index + ".jpg",
+      heading: text["CardHeading" + index],
+      text: text["CardIntro" + index],
+    });
+  }
   return (
     <div ref={props.setRef} className={styles.imageSection}>
       {serviceImages.map((image, index) => (
